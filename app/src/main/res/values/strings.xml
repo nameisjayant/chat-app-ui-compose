@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Chat app ui</string>
+    <string name="stay_with_your_friends">Stay connected with your friends and family</string>
+    <string name="secure_private_messaging">Secure, private messaging</string>
+    <string name="get_started">Get Started</string>
+    <string name="add_story">Add Story</string>
+</resources>
