@@ -1,13 +1,16 @@
 package com.nameisjayant.chatappui.data
 
+import android.os.Parcelable
 import androidx.annotation.DrawableRes
 import com.nameisjayant.chatappui.R
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Person(
-    val id: Int,
-    val name: String,
-    @DrawableRes val icon: Int
-)
+    val id: Int = 0,
+    val name: String = "",
+    @DrawableRes val icon: Int = R.drawable.person_1
+):Parcelable
 
 val personList = listOf(
     Person(

@@ -4,4 +4,6 @@
     <string name="secure_private_messaging">Secure, private messaging</string>
     <string name="get_started">Get Started</string>
     <string name="add_story">Add Story</string>
+    <string name="online">Online</string>
+    <string name="type_message">Type Message</string>
 </resources>

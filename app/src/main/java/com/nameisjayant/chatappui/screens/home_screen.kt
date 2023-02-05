@@ -2,6 +2,7 @@ package com.nameisjayant.chatappui.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -36,6 +37,7 @@ import androidx.navigation.NavHostController
 import com.nameisjayant.chatappui.R
 import com.nameisjayant.chatappui.data.Person
 import com.nameisjayant.chatappui.data.personList
+import com.nameisjayant.chatappui.navigation.CHAT_SCREEN
 import com.nameisjayant.chatappui.ui.theme.*
 
 
@@ -78,7 +80,10 @@ fun HomeScreen(
                     modifier = Modifier.padding(bottom = 15.dp, top = 30.dp)
                 ) {
                     items(personList, key = { it.id }) {
-                        UserEachRow(person = it)
+                        UserEachRow(person = it){
+                            navHostController.currentBackStackEntry?.savedStateHandle?.set("data",it)
+                            navHostController.navigate(CHAT_SCREEN)
+                        }
                     }
                 }
             }
@@ -108,13 +113,15 @@ fun RoundedCorner(
 
 @Composable
 fun UserEachRow(
-    person: Person
+    person: Person,
+    onClick:()->Unit
 ) {
 
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .background(Color.White)
+            .clickable { onClick() }
             .padding(horizontal = 20.dp, vertical = 5.dp),
     ) {
         Column {

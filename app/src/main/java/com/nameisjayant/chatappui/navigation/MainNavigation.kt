@@ -21,7 +21,7 @@ fun MainNavigation() {
             HomeScreen(navHostController)
         }
         composable(CHAT_SCREEN){
-            ChatScreen()
+            ChatScreen(navHostController)
         }
     }
 

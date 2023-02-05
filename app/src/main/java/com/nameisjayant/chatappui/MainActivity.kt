@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.nameisjayant.chatappui.navigation.MainNavigation
+import com.nameisjayant.chatappui.screens.ChatScreen
 import com.nameisjayant.chatappui.screens.HomeScreen
 import com.nameisjayant.chatappui.screens.StartScreen
 import com.nameisjayant.chatappui.ui.theme.ChatAppUiTheme
