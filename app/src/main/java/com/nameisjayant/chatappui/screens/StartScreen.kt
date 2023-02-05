@@ -23,14 +23,18 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.nameisjayant.chatappui.R
+import com.nameisjayant.chatappui.navigation.HOME_SCREEN
 import com.nameisjayant.chatappui.ui.theme.Aqua
 import com.nameisjayant.chatappui.ui.theme.InterBold
 import com.nameisjayant.chatappui.ui.theme.InterSemibold
 
 
 @Composable
-fun StartScreen() {
+fun StartScreen(
+    navHostController: NavHostController
+) {
 
     Box(
         modifier = Modifier
@@ -65,7 +69,9 @@ fun StartScreen() {
             }
         }
         Button(
-            onClick = {}, modifier = Modifier
+            onClick = {
+                      navHostController.navigate(HOME_SCREEN)
+            }, modifier = Modifier
                 .fillMaxWidth()
                 .padding(20.dp)
                 .align(Alignment.BottomCenter)

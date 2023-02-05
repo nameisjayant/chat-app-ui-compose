@@ -32,6 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.nameisjayant.chatappui.R
 import com.nameisjayant.chatappui.data.Person
 import com.nameisjayant.chatappui.data.personList
@@ -39,7 +40,9 @@ import com.nameisjayant.chatappui.ui.theme.*
 
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    navHostController: NavHostController
+) {
 
     Box(
         modifier = Modifier
