@@ -1,8 +1,11 @@
 package com.nameisjayant.chatappui.screens
 
+import android.annotation.SuppressLint
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -19,6 +22,7 @@ import androidx.compose.ui.Alignment.Companion.BottomCenter
 import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -95,9 +99,11 @@ fun ChatRow(
         horizontalAlignment = if (chat.direction) Alignment.Start else Alignment.End
     ) {
         Box(
-            modifier = Modifier.clip(RoundedCornerShape(100.dp)).background(
-                if (chat.direction) LightRed else LightYellow
-            ),
+            modifier = Modifier
+                .clip(RoundedCornerShape(100.dp))
+                .background(
+                    if (chat.direction) LightRed else LightYellow
+                ),
             contentAlignment = Center
         ) {
             Text(
@@ -246,3 +252,4 @@ fun UserNameRow(
     }
 
 }
+

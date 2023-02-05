@@ -1,8 +1,10 @@
 package com.nameisjayant.chatappui.screens
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -21,6 +23,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Alignment.Companion.TopCenter
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -121,7 +124,7 @@ fun UserEachRow(
         modifier = Modifier
             .fillMaxWidth()
             .background(Color.White)
-            .clickable { onClick() }
+            .noRippleEffect { onClick() }
             .padding(horizontal = 20.dp, vertical = 5.dp),
     ) {
         Column {
@@ -289,4 +292,14 @@ fun Header() {
         Text(text = annotatedString)
     }
 
+}
+
+@SuppressLint("UnnecessaryComposedModifier")
+fun Modifier.noRippleEffect(onClick:()->Unit) = composed {
+    clickable(
+        interactionSource = MutableInteractionSource(),
+        indication = null
+    ) {
+        onClick()
+    }
 }
